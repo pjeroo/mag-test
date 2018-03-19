@@ -8,5 +8,6 @@ COPY files/default /etc/nginx/sites-enabled/default
 COPY files/entrypoint.sh /devops/entrypoint.sh
 
 HEALTHCHECK CMD curl --fail http://localhost:80 || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:8080 || exit 1
 
 ENTRYPOINT ["/devops/entrypoint.sh"]
